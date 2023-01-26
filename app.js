@@ -32,7 +32,19 @@ app.post('/contact-details', (req, res, next) => {
   data.email = body.email;
   data.address = body.address;
 
-  res.redirect('/experience');
+  res.redirect('/summary');
+});
+
+app.get('/summary', (req, res, next) => {
+  res.render('summary-page', {
+    pageTitle: 'Professional Summary',
+  });
+});
+
+app.post('/summary', (req, res, next) => {
+  const body = req.body;
+
+  data.professionalSummary = body.summary;
 });
 
 app.listen(3000);
