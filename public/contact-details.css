@@ -1,24 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  padding: 0;
-  margin: 0;
-}
-
-.logo {
-  width: 10%;
-  height: auto;
-  margin: 20px 20px;
-}
-
 .main {
   margin-top: 200px;
-  display: grid;
-  place-content: center;
 }
 
 input,
@@ -50,16 +31,4 @@ label {
 
 .address {
   grid-column: span 2;
-}
-
-.btn-submit {
-  width: 140px;
-  height: 40px;
-  border: 0;
-  font-size: 15px;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
-  background-color: #2b8a3e;
-  color: #fff;
-  cursor: pointer;
 }

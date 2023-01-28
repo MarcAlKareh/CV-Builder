@@ -5,7 +5,9 @@ const bodyParser = require('body-parser');
 
 const app = express();
 
-const data = {};
+const data = {
+  experience: [],
+};
 
 app.set('view engine', 'ejs');
 app.set('views', 'views');
@@ -45,6 +47,28 @@ app.post('/summary', (req, res, next) => {
   const body = req.body;
 
   data.professionalSummary = body.summary;
+
+  res.redirect('/experience');
+});
+
+app.get('/experience', (req, res, next) => {
+  res.render('experience', {
+    pageTitle: 'Work Experience',
+  });
+});
+
+app.post('/experience', (req, res, next) => {
+  const body = req.body;
+
+  data.experience.push({
+    jobTitle: body.jtitle,
+    company: body.company,
+    city: body.city,
+    region: body.region,
+    startDate: body.sdate,
+    endDate: body.edate,
+    jobDescription: body.jdescription,
+  });
 });
 
 app.listen(3000);

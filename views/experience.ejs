@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= pageTitle %></title>
+    <link rel="stylesheet" href="/main.css" />
+    <link rel="stylesheet" href="/experience.css" />
+  </head>
+  <body>
+    <%- include('logo.ejs') %>
+    <div class="main">
+      <h2>Tell us a little bit about your most recent job</h2>
+      <form class="experience-form" action="/experience" method="post">
+        <div class="job-info">
+          <div>
+            <label for="jtitle">Job Title</label>
+            <input type="text" name="jtitle" id="jtitle" />
+          </div>
+
+          <div>
+            <label for="company">Company</label>
+            <input type="text" name="company" id="company" />
+          </div>
+
+          <div>
+            <label for="city">City</label>
+            <input type="text" name="city" id="city" />
+          </div>
+
+          <div>
+            <label for="region">Country/Region</label>
+            <input type="text" name="region" id="region" />
+          </div>
+
+          <div>
+            <label for="sdate">Start Date</label>
+            <input type="date" name="sdate" id="sdate" />
+          </div>
+
+          <div>
+            <label for="edate">End Date</label>
+            <input type="date" name="edate" id="edate" />
+          </div>
+        </div>
+
+        <h2>Now let's add the job description</h2>
+
+        <grammarly-editor-plugin>
+          <textarea
+            placeholder="Add your responsibilities and what you have achieved"
+            name="jdescription"
+            id="jdescription"
+          ></textarea>
+        </grammarly-editor-plugin>
+
+        <div class="buttons">
+          <button
+            class="btn-back"
+            type="button"
+            onclick="window.location.href = '/summary';"
+          >
+            BACK
+          </button>
+          <button class="btn-submit" type="submit">NEXT</button>
+        </div>
+      </form>
+    </div>
+
+    <script src="https://unpkg.com/@grammarly/editor-sdk?clientId=client_8ZRzowx19BYgQj14Hc4NPU"></script>
+  </body>
+</html>
