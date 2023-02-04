@@ -14,6 +14,7 @@ app.set('views', 'views');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.json());
 
 app.get('/', (req, res, next) => {
   res.redirect('/contact-details');
@@ -53,7 +54,8 @@ app.post('/summary', (req, res, next) => {
 
 app.get('/experience', (req, res, next) => {
   res.render('experience', {
-    pageTitle: 'Work Experience',
+    pageTitle: 'Work History',
+    mainHeader: 'Tell us a little bit about your most recent job',
   });
 });
 
@@ -69,6 +71,35 @@ app.post('/experience', (req, res, next) => {
     endDate: body.edate,
     jobDescription: body.jdescription,
   });
+
+  res.redirect('/work-history');
+});
+
+app.get('/work-history', (req, res, next) => {
+  res.render('work-history', {
+    pageTitle: 'Work History',
+    jobs: data.experience,
+  });
+});
+
+app.get('/another-position', (req, res, next) => {
+  res.render('experience', {
+    pageTitle: 'Work History',
+    mainHeader: 'Tell us about another job',
+  });
+});
+
+app.get('/delete', (req, res, next) => {
+  const { jobName } = req.query;
+  console.log(jobName);
+
+  // Delete job from experience array
+  const index = data.experience.findIndex(obj => obj.jobTitle === jobName);
+  data.experience.splice(index, 1);
+
+  !data.experience.length
+    ? res.send({ url: '/experience' })
+    : res.send({ url: '/work-history' });
 });
 
 app.listen(3000);

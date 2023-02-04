@@ -1,7 +1,5 @@
-h2 {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 300;
-  color: #e67700;
+main {
+  margin-top: -25px;
 }
 
 .summary-form textarea {

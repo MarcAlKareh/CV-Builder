@@ -5,23 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%= pageTitle %></title>
-    <link rel="stylesheet" href="/main.css" />
-    <link rel="stylesheet" href="/experience.css" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/experience.css" />
   </head>
   <body>
     <%- include('logo.ejs') %>
-    <div class="main">
-      <h2>Tell us a little bit about your most recent job</h2>
+    <main>
+      <h2><%= mainHeader %></h2>
       <form class="experience-form" action="/experience" method="post">
         <div class="job-info">
           <div>
             <label for="jtitle">Job Title</label>
-            <input type="text" name="jtitle" id="jtitle" />
+            <input type="text" name="jtitle" id="jtitle" required="required" />
           </div>
 
           <div>
             <label for="company">Company</label>
-            <input type="text" name="company" id="company" />
+            <input
+              type="text"
+              name="company"
+              id="company"
+              required="required"
+            />
           </div>
 
           <div>
@@ -66,7 +71,7 @@
           <button class="btn-submit" type="submit">NEXT</button>
         </div>
       </form>
-    </div>
+    </main>
 
     <script src="https://unpkg.com/@grammarly/editor-sdk?clientId=client_8ZRzowx19BYgQj14Hc4NPU"></script>
   </body>

@@ -1,9 +1,8 @@
-.main {
-  margin-top: 100px;
+main {
+  margin-top: 20px;
 }
 
 h2 {
-  font-family: 'Poppins', sans-serif;
   font-weight: 300;
   color: #e67700;
   margin-bottom: 50px;
@@ -31,7 +30,6 @@ label {
 
 .experience-form label {
   font-size: 12px;
-  font-family: 'Poppins', sans-serif;
   font-weight: 600;
   color: #495057;
   margin-bottom: 4px;

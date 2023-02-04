@@ -1,0 +1,54 @@
+main {
+  margin-top: 20px;
+}
+
+.job-item,
+.btn-add {
+  width: 600px;
+}
+
+.job-item {
+  border: 1px solid #adb5bd;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.delete-icon {
+  width: 15px;
+  height: 15px;
+  fill: #e67700;
+  margin-top: 20px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.job-title {
+  font-size: 14px;
+  margin-top: 20px;
+  margin-left: 20px;
+  color: #343a40;
+}
+
+.btn-add {
+  height: 50px;
+  outline: none;
+  color: #e67700;
+  border: 2px dotted #e67700;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  margin-bottom: 40px;
+}
+
+.plus-icon {
+  width: 20px;
+  height: 20px;
+  fill: #e67700;
+}
