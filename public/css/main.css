@@ -16,6 +16,12 @@ h2 {
   margin-bottom: 25px;
 }
 
+p {
+  margin-top: -20px;
+  font-size: 12px;
+  margin-bottom: 30px;
+}
+
 .logo {
   width: 15%;
   height: auto;

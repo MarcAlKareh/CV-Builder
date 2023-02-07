@@ -2,7 +2,6 @@ const path = require('path');
 
 const express = require('express');
 const bodyParser = require('body-parser');
-const { emitWarning } = require('process');
 
 const app = express();
 
@@ -111,10 +110,30 @@ app.get('/education', (req, res, next) => {
 
 app.post('/education', (req, res, next) => {
   const body = req.body;
-
   data.education = body.education;
+  res.redirect('/skills');
+});
 
-  console.log(data);
+app.get('/skills', (req, res, next) => {
+  res.render('skills', {
+    pageTitle: 'Skills',
+  });
+});
+
+app.post('/skills', (req, res, next) => {
+  const body = req.body;
+
+  const skills = body.skills.split(', ').filter(skill => skill);
+  const languages = body.languages.split(', ').filter(language => language);
+
+  data.skills = skills;
+  data.languages = languages;
+
+  res.redirect('/final-resume');
+});
+
+app.get('/final-resume', (req, res, next) => {
+  res.render();
 });
 
 app.listen(3000);
