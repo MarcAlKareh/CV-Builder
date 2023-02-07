@@ -2,6 +2,7 @@ const path = require('path');
 
 const express = require('express');
 const bodyParser = require('body-parser');
+const { emitWarning } = require('process');
 
 const app = express();
 
@@ -100,6 +101,20 @@ app.get('/delete', (req, res, next) => {
   !data.experience.length
     ? res.send({ url: '/experience' })
     : res.send({ url: '/work-history' });
+});
+
+app.get('/education', (req, res, next) => {
+  res.render('education', {
+    pageTitle: 'Education',
+  });
+});
+
+app.post('/education', (req, res, next) => {
+  const body = req.body;
+
+  data.education = body.education;
+
+  console.log(data);
 });
 
 app.listen(3000);

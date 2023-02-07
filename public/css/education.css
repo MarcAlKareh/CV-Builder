@@ -1,0 +1,25 @@
+main {
+  margin-top: -35px;
+}
+
+p {
+  margin-top: -20px;
+  font-size: 12px;
+  margin-bottom: 30px;
+}
+
+.education-form textarea {
+  outline: none;
+  border: 1px solid #adb5bd;
+  width: 100%;
+  height: 400px;
+  font-size: 16px;
+  font-family: sans-serif;
+  resize: none;
+  margin-bottom: 20px;
+}
+
+.education-form textarea::placeholder {
+  color: #adb5bd;
+  font-family: sans-serif;
+}
