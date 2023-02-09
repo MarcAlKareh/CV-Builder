@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/final.css" />
+    <title><%= pageTitle %></title>
+  </head>
+  <body>
+    <%- include('logo.ejs') %>
+    <main>
+      <h2>Amazing! Here is your resume.</h2>
+      <div class="resume">
+        <h3 class="name"><%= data.fname %> <%= data.lname %></h3>
+        <h3 class="profession"><%= data.profession %></h3>
+        <p><%= data.address %></p>
+        <p><%= data.phone %></p>
+        <p><%= data.email %></p>
+
+        <% if (data.professionalSummary) { %>
+        <h3 class="header summary-header">PROFESSIONAL SUMMARY</h3>
+        <p class="professional-summary"><%= data.professionalSummary %></p>
+        <% } %> <% if (data.skills) { %>
+        <div class="skills">
+          <h3 class="header skills-header">SKILLS</h3>
+          <ul>
+            <% for (let skill of data.skills) { %>
+            <li><%= skill %></li>
+            <% } %>
+          </ul>
+        </div>
+        <% } %> <% if (data.experience) { %>
+        <div class="experience">
+          <h3 class="header experience-header">EXPERIENCE</h3>
+          <% for (let job of data.experience) { %>
+          <div class="job">
+            <p class="title">
+              <span class="bold"
+                ><%= job.company %>, <%= job.city %>, <%= job.region %></span
+              >
+              - <%= job.jobTitle %>
+            </p>
+            <p class="date"><%= job.startDate %> - <%= job.endDate %></p>
+            <p class="job-description"><%= job.jobDescription %></p>
+          </div>
+          <% } %>
+        </div>
+        <% } %> <% if (data.education) { %>
+        <div class="education">
+          <h3 class="header education-header">EDUCATION</h3>
+          <p class="education-description"><%= data.education %></p>
+        </div>
+        <% } %> <% if (data.languages) { %>
+        <h3 class="header">LANGUAGES</h3>
+        <ul>
+          <% for (let language of data.languages) { %>
+          <li><%= language %></li>
+          <% } %>
+        </ul>
+        <% } %>
+      </div>
+    </main>
+  </body>
+</html>

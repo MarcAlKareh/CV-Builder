@@ -1,0 +1,91 @@
+main {
+  margin-top: -50px;
+}
+
+h2 {
+  margin-bottom: 50px;
+}
+
+p {
+  line-height: 5px;
+}
+
+ul {
+  margin-top: -10px;
+}
+
+li {
+  font-size: 15px;
+}
+
+.resume {
+  width: 500px;
+  border-top: 8px solid #2f9e44;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  padding-left: 30px;
+  padding-bottom: 20px;
+  margin-bottom: 30px;
+}
+
+.header {
+  color: #2f9e44;
+}
+
+.summary-header {
+  margin-bottom: 30px;
+}
+
+.professional-summary {
+  font-size: 14px;
+}
+
+.name {
+  font-weight: 400;
+  font-size: 28px;
+}
+
+.profession {
+  margin-top: -25px;
+  font-size: 24px;
+  font-family: sans-serif;
+  font-weight: 400;
+  color: #37b24d;
+  margin-bottom: 35px;
+}
+
+.experience-header {
+  margin-bottom: 35px;
+}
+
+.job {
+  margin-bottom: 50px;
+}
+
+.title {
+  font-size: 16px;
+  margin-bottom: 40px;
+}
+
+.date {
+  margin-bottom: 40px;
+}
+
+.job-description {
+  font-size: 14px;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.education {
+  margin-bottom: 40px;
+}
+
+.education-header {
+  margin-bottom: 35px;
+}
+
+.education-description {
+  font-size: 14px;
+}

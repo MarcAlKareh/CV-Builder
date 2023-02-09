@@ -33,6 +33,7 @@ app.post('/contact-details', (req, res, next) => {
   data.lname = body.lname;
   data.phone = body.phone;
   data.email = body.email;
+  data.profession = body.profession;
   data.address = body.address;
 
   res.redirect('/summary');
@@ -62,13 +63,32 @@ app.get('/experience', (req, res, next) => {
 app.post('/experience', (req, res, next) => {
   const body = req.body;
 
+  const months = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December',
+  ];
+
   data.experience.push({
     jobTitle: body.jtitle,
     company: body.company,
     city: body.city,
     region: body.region,
-    startDate: body.sdate,
-    endDate: body.edate,
+    startDate: `${months[new Date(body.sdate).getMonth()]}, ${new Date(
+      body.sdate
+    ).getFullYear()}`,
+    endDate: `${months[new Date(body.edate).getMonth()]}, ${new Date(
+      body.edate
+    ).getFullYear()}`,
     jobDescription: body.jdescription,
   });
 
@@ -76,10 +96,12 @@ app.post('/experience', (req, res, next) => {
 });
 
 app.get('/work-history', (req, res, next) => {
-  res.render('work-history', {
-    pageTitle: 'Work History',
-    jobs: data.experience,
-  });
+  !data.experience.length
+    ? res.redirect('/experience')
+    : res.render('work-history', {
+        pageTitle: 'Work History',
+        jobs: data.experience,
+      });
 });
 
 app.get('/another-position', (req, res, next) => {
@@ -91,7 +113,6 @@ app.get('/another-position', (req, res, next) => {
 
 app.get('/delete', (req, res, next) => {
   const { jobName } = req.query;
-  console.log(jobName);
 
   // Delete job from experience array
   const index = data.experience.findIndex(obj => obj.jobTitle === jobName);
@@ -133,7 +154,10 @@ app.post('/skills', (req, res, next) => {
 });
 
 app.get('/final-resume', (req, res, next) => {
-  res.render();
+  res.render('final', {
+    pageTitle: 'Final Resume',
+    data: data,
+  });
 });
 
 app.listen(3000);
