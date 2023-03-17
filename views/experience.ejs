@@ -16,12 +16,13 @@
         <div class="job-info">
           <div>
             <label for="jtitle">Job Title</label>
-            <input type="text" name="jtitle" id="jtitle" required="required" />
+            <input value="<%=data.experience[index] ? data.experience[index].jobTitle : "" %>" type="text" name="jtitle" id="jtitle" required="required" />
           </div>
 
           <div>
             <label for="company">Company</label>
             <input
+            value="<%=data.experience[index] ? data.experience[index].company : ""%>"
               type="text"
               name="company"
               id="company"
@@ -31,22 +32,22 @@
 
           <div>
             <label for="city">City</label>
-            <input type="text" name="city" id="city" />
+            <input value="<%=data.experience[index] ? data.experience[index].city : ""%>" type="text" name="city" id="city" />
           </div>
 
           <div>
             <label for="region">Country/Region</label>
-            <input type="text" name="region" id="region" />
+            <input value="<%=data.experience[index] ? data.experience[index].region : ""%>" type="text" name="region" id="region" />
           </div>
 
           <div>
             <label for="sdate">Start Date</label>
-            <input type="date" name="sdate" id="sdate" />
+            <input value="<%=data.experience[index] ? data.experience[index].sdate : ""%>" type="date" name="sdate" id="sdate" />
           </div>
 
           <div>
             <label for="edate">End Date</label>
-            <input type="date" name="edate" id="edate" />
+            <input value="<%=data.experience[index] ? data.experience[index].edate : ""%>" type="date" name="edate" id="edate" />
           </div>
         </div>
 
@@ -57,7 +58,7 @@
             placeholder="Add your responsibilities and what you have achieved"
             name="jdescription"
             id="jdescription"
-          ></textarea>
+          ><%=data.experience[index] ? data.experience[index].jobDescription : ""%></textarea>
         </grammarly-editor-plugin>
 
         <button class="btn-add" onclick="window.location.href='/education'">
