@@ -1,0 +1,26 @@
+{
+  "name": "cv-builder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarcAlKareh/CV-builder.git"
+  },
+  "author": "Fleskimiso, MarcAlKareh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MarcAlKareh/CV-builder/issues"
+  },
+  "homepage": "https://github.com/MarcAlKareh/CV-builder#readme",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "nodemon": "^2.0.21"
+  }
+}
