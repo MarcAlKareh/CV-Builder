@@ -1,52 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/main.css" />
-    <link rel="stylesheet" href="/css/skills.css" />
-    <title><%= pageTitle %></title>
-  </head>
-  <body>
-    <%- include('logo.ejs') %>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="/css/skills.css" />
+  <title>
+    <%= pageTitle %>
+  </title>
+</head>
+
+<body>
+  <%- include('logo.ejs') %>
     <main>
-      <h2>Tell us about your different skills</h2>
-      <p>Seperate each skill by a comma and a space (, )</p>
+      <div class="mainContainer">
+        <h2>Tell us about your different skills</h2>
+        <p>Seperate each skill by a comma and a space (, )</p>
 
-      <form class="skills-form" action="/skills" method="post">
-        <grammarly-editor-plugin>
-          <textarea
-            placeholder="List your skills here."
-            name="skills"
-            id="skills"
-          ><%= data.skills? data.skills.join(", ") : ""%></textarea>
-        </grammarly-editor-plugin>
+        <form class="skills-form" action="/skills" method="post">
+          <grammarly-editor-plugin>
+            <textarea placeholder="List your skills here." name="skills"
+              id="skills"><%= data.skills? data.skills.join(", ") : ""%></textarea>
+          </grammarly-editor-plugin>
 
-        <h2>Now tell us about the languages you speak</h2>
-        <p>Seperate each language by a comma and a space (, )</p>
+          <h2>Now tell us about the languages you speak</h2>
+          <p>Seperate each language by a comma and a space (, )</p>
 
-        <grammarly-editor-plugin>
-          <textarea
-            placeholder="List the languages you speak here."
-            name="languages"
-            id="languages"
-          ><%= data.languages? data.languages.join(", ") : ""%></textarea>
-        </grammarly-editor-plugin>
+          <grammarly-editor-plugin>
+            <textarea placeholder="List the languages you speak here." name="languages"
+              id="languages"><%= data.languages? data.languages.join(", ") : ""%></textarea>
+          </grammarly-editor-plugin>
 
-        <div class="buttons">
-          <button
-            class="btn-back"
-            type="button"
-            onclick="window.location.href = '/education';"
-          >
-            BACK
-          </button>
-          <button class="btn-submit" type="submit">NEXT</button>
-        </div>
-      </form>
+          <div class="buttons">
+            <button class="btn-back" type="button" onclick="window.location.href = '/education';">
+              BACK
+            </button>
+            <button class="btn-submit" type="submit">NEXT</button>
+          </div>
+        </form>
+      </div>
     </main>
 
     <script src="https://unpkg.com/@grammarly/editor-sdk?clientId=client_8ZRzowx19BYgQj14Hc4NPU"></script>
-  </body>
+</body>
+
 </html>

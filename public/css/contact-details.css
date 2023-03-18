@@ -28,3 +28,9 @@ label {
   color: #495057;
   margin-bottom: 4px;
 }
+@media only screen and (orientation: portrait) {
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+  }
+}

@@ -17,3 +17,5 @@ main {
   color: #adb5bd;
   font-family: sans-serif;
 }
+@media only screen and (orientation: portrait) {
+}
