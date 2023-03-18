@@ -23,3 +23,10 @@ p {
   color: #adb5bd;
   font-family: sans-serif;
 }
+@media only screen and (orientation: portrait) {
+  .mainContainer {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

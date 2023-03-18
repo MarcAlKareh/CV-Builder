@@ -172,3 +172,27 @@ footer {
   height: 25px;
   stroke: #fff;
 }
+@media only screen and (orientation: portrait)  {
+  .resume {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .color-selector {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+  }
+  .color {
+    flex-basis: 26%;
+    margin-top: 1em;
+  }
+  .color-selector .color:nth-child(n) {
+    margin-bottom: 1em;
+  }
+  footer {
+    height: fit-content;
+  }
+}

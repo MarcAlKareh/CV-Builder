@@ -3,9 +3,7 @@ main {
 }
 
 .job-item,
-.btn-add {
-  width: 600px;
-}
+
 
 .job-item {
   border: 1px solid #adb5bd;
@@ -51,4 +49,32 @@ main {
   width: 20px;
   height: 20px;
   fill: #e67700;
+}
+@media only screen and (orientation: portrait) {
+  main {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  .job-item {
+    margin-left: 1em;
+    margin-right: 1em;
+    width: 90%;
+  }
+  .work-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .btn-add {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
 }

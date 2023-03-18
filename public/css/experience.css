@@ -68,3 +68,28 @@ label {
   cursor: pointer;
   margin-bottom: 40px;
 }
+@media only screen and (orientation: portrait) {
+  .job-info {
+    display: flex;
+    flex-direction: column;
+  }
+  .job-info div {
+    width: 100%;
+  }
+  .job-info div,h2,textarea {
+    margin-left: 1em;
+    margin-right: 1em;
+  }
+  .btn-add {
+    margin-left: 1em;
+    margin-right: 1em;
+  }
+  .buttons {
+    margin-left: 1rem;
+  }
+  .buttons button {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+ }
