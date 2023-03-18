@@ -20,7 +20,7 @@
             placeholder="List your skills here."
             name="skills"
             id="skills"
-          ></textarea>
+          ><%= data.skills? data.skills.join(", ") : ""%></textarea>
         </grammarly-editor-plugin>
 
         <h2>Now tell us about the languages you speak</h2>
@@ -31,7 +31,7 @@
             placeholder="List the languages you speak here."
             name="languages"
             id="languages"
-          ></textarea>
+          ><%= data.languages? data.languages.join(", ") : ""%></textarea>
         </grammarly-editor-plugin>
 
         <div class="buttons">
