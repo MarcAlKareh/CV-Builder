@@ -1,16 +1,16 @@
 const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
-const expressSession = require("express-session");
-const cookieParser = require("cookie-parser");
+const expressSession = require('express-session');
+const cookieParser = require('cookie-parser');
 
-const isProduction = process.env.NODE_ENV === "production";
-const secret = process.env.SECRET || "some secret";
+const isProduction = process.env.NODE_ENV === 'production';
+const secret = process.env.SECRET || 'some secret';
 
 const app = express();
 
 // const data = {
-//   experience: [], no need for that with session 
+//   experience: [], no need for that with session
 // };
 
 app.set('view engine', 'ejs');
@@ -23,31 +23,29 @@ app.use(express.json());
 app.use(cookieParser());
 
 // might need to configure mongodb session store
-app.use(expressSession({
-  secret: secret,
-    saveUninitialized: true, 
-    resave: false, 
+app.use(
+  expressSession({
+    secret: secret,
+    saveUninitialized: true,
+    resave: false,
     cookie: {
       maxAge: 1000 * 3600 * 24 * 14, // 14 days  for cookie to expire
       httpOnly: true,
       secure: isProduction ? true : false,
-      sameSite: isProduction ? "none" : "lax",
+      sameSite: isProduction ? 'none' : 'lax',
     },
-}))
+  })
+);
 
-
-app.use( (req,res,next) =>{
-  //init session data; 
-  if(!req.session.data) {
+app.use((req, res, next) => {
+  //init session data;
+  if (!req.session.data) {
     req.session.data = {
-      experience: []
-    }
+      experience: [],
+    };
   }
-  console.log("setting up session data...");
-  console.log(req.session.data);
   next();
-})
-
+});
 
 app.get('/', (req, res, next) => {
   res.redirect('/contact-details');
@@ -56,7 +54,7 @@ app.get('/', (req, res, next) => {
 app.get('/contact-details', (req, res, next) => {
   res.render('contact-details', {
     pageTitle: 'Contact Info',
-    data: req.session.data
+    data: req.session.data,
   });
 });
 
@@ -76,7 +74,7 @@ app.post('/contact-details', (req, res, next) => {
 app.get('/summary', (req, res, next) => {
   res.render('summary-page', {
     pageTitle: 'Professional Summary',
-    data: req.session.data
+    data: req.session.data,
   });
 });
 
@@ -95,7 +93,7 @@ app.get('/experience', (req, res, next) => {
     pageTitle: 'Work History',
     mainHeader: 'Tell us a little bit about your most recent job',
     data: req.session.data,
-    index: mostRecentIndex
+    index: mostRecentIndex,
   });
 });
 
@@ -150,7 +148,7 @@ app.get('/another-position', (req, res, next) => {
     pageTitle: 'Work History',
     mainHeader: 'Tell us about another job',
     data: req.session.data,
-    index: req.session.data.experience.length - 1
+    index: req.session.data.experience.length - 1,
   });
 });
 
@@ -158,7 +156,9 @@ app.get('/delete', (req, res, next) => {
   const { jobName } = req.query;
 
   // Delete job from experience array
-  const index = req.session.data.experience.findIndex(obj => obj.jobTitle === jobName);
+  const index = req.session.data.experience.findIndex(
+    obj => obj.jobTitle === jobName
+  );
   req.session.data.experience.splice(index, 1);
 
   !req.session.data.experience.length
@@ -169,7 +169,7 @@ app.get('/delete', (req, res, next) => {
 app.get('/education', (req, res, next) => {
   res.render('education', {
     pageTitle: 'Education',
-    data: req.session.data
+    data: req.session.data,
   });
 });
 
@@ -182,16 +182,21 @@ app.post('/education', (req, res, next) => {
 app.get('/skills', (req, res, next) => {
   res.render('skills', {
     pageTitle: 'Skills',
-    data: req.session.data
+    data: req.session.data,
   });
 });
 
 app.post('/skills', (req, res, next) => {
   const body = req.body;
 
-  
-  const skills = body.skills.replace(" ", "").split(',').filter(skill => skill);
-  const languages = body.languages.replace(" ","").split(',').filter(language => language);
+  const skills = body.skills
+    .replace(' ', '')
+    .split(',')
+    .filter(skill => skill);
+  const languages = body.languages
+    .replace(' ', '')
+    .split(',')
+    .filter(language => language);
 
   req.session.data.skills = skills;
   req.session.data.languages = languages;
@@ -206,8 +211,8 @@ app.get('/final-resume', (req, res, next) => {
   });
 });
 
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 3000;
 
-app.listen(port, ()  =>{
-  console.log("listening on port", 3000);
+app.listen(port, () => {
+  console.log('listening on port', 3000);
 });
