@@ -123,8 +123,6 @@ app.post('/experience', (req, res, next) => {
     startDate: `${months[new Date(body.sdate).getMonth()]}, ${new Date(
       body.sdate
     ).getFullYear()}`,
-    sdate: body.sdate,
-    edate: body.edate,
     endDate: `${months[new Date(body.edate).getMonth()]}, ${new Date(
       body.edate
     ).getFullYear()}`,
@@ -148,7 +146,6 @@ app.get('/another-position', (req, res, next) => {
     pageTitle: 'Work History',
     mainHeader: 'Tell us about another job',
     data: req.session.data,
-    index: req.session.data.experience.length - 1,
   });
 });
 
