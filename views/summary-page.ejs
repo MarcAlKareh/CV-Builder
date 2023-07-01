@@ -13,14 +13,20 @@
     <main>
       <h2>Professional Summary</h2>
 
+      <textarea
+        type="text"
+        placeholder="Get your summary paragraph checked by an AI here"
+        class="summary-check"
+      ></textarea>
+
       <form class="summary-form" action="/summary" method="post">
-        <grammarly-editor-plugin>
-          <textarea
-            placeholder="Write your summary here."
-            name="summary"
-            id="summary"
-          ><%= data.professionalSummary%></textarea>
-        </grammarly-editor-plugin>
+        <textarea
+          placeholder="Write your summary here."
+          name="summary"
+          id="summary"
+        >
+<%= data.professionalSummary%></textarea
+        >
 
         <div class="buttons">
           <button
@@ -34,7 +40,5 @@
         </div>
       </form>
     </main>
-
-    <script src="https://unpkg.com/@grammarly/editor-sdk?clientId=client_8ZRzowx19BYgQj14Hc4NPU"></script>
   </body>
 </html>
