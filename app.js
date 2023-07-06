@@ -3,6 +3,17 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const expressSession = require('express-session');
 const cookieParser = require('cookie-parser');
+const dotenv = require('dotenv');
+
+dotenv.config();
+
+const { Configuration, OpenAIApi } = require("openai");
+
+const openAIConfig = new Configuration({
+  apiKey: process.env.API_KEY,
+});
+
+const openai = new OpenAIApi(openAIConfig);
 
 const isProduction = process.env.NODE_ENV === 'production';
 const secret = process.env.SECRET || 'some secret';
@@ -84,6 +95,21 @@ app.post('/summary', (req, res, next) => {
   req.session.data.professionalSummary = body.summary;
 
   res.redirect('/experience');
+});
+
+app.get('/summary-ai', async (req, res, next) => {
+  const { input } = req.query;
+
+  const resAi = await openai.createChatCompletion({
+    model: "gpt-3.5-turbo",
+    messages: [{ role: "user", content: input }],
+  });
+
+  // console.log(resAi.data.choices[0].message.content);
+
+  res.send({
+    reply: resAi.data.choices[0].message.content,
+  });
 });
 
 app.get('/experience', (req, res, next) => {
