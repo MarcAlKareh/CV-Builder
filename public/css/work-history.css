@@ -2,10 +2,10 @@ main {
   margin-top: 20px;
 }
 
-.job-item, btn-add {
+.job-item,
+btn-add {
   width: 600px;
 }
-
 
 .job-item {
   border: 1px solid #adb5bd;
@@ -31,27 +31,12 @@ main {
   color: #343a40;
 }
 
-.btn-add {
-  height: 50px;
-  outline: none;
-  color: #e67700;
-  border: 2px dotted #e67700;
-  font-weight: 600;
-  font-family: 'Poppins', sans-serif;
-  background-color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  cursor: pointer;
-  margin-bottom: 40px;
-}
-
 .plus-icon {
   width: 20px;
   height: 20px;
-  fill: #e67700;
+  stroke: #e67700;
 }
+
 @media only screen and (orientation: portrait) {
   main {
     display: flex;

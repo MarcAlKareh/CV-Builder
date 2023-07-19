@@ -11,7 +11,7 @@ body {
 }
 
 h2 {
-  font-weight: 300;
+  font-weight: bold;
   color: #e67700;
   margin-bottom: 25px;
 }
@@ -39,6 +39,29 @@ main {
   margin-bottom: 20px;
 }
 
+.btn-add {
+  width: 100%;
+  height: 40px;
+  outline: none;
+  color: #e67700;
+  border: 2px solid #e67700;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  margin-bottom: 40px;
+}
+
+.btn-add:hover {
+  background-color: #e67700;
+  color: #fff;
+}
+
 .btn-back,
 .btn-submit {
   width: 140px;
@@ -52,12 +75,22 @@ main {
 .btn-back {
   outline: none;
   background-color: #fff;
-  border: 2px solid #e67700;
-  color: #e67700;
+  border: 2px solid #495057;
+  color: #495057;
+}
+
+.btn-back:hover {
+  background-color: #e9ecef;
+  transform: translateY(-2px);
 }
 
 .btn-submit {
   border: 0;
-  background-color: #2b8a3e;
-  color: #fff;
+  background-color: #ffd43b;
+  color: #000;
+}
+
+.btn-submit:hover {
+  background-color: #fab005;
+  transform: translateY(-2px);
 }

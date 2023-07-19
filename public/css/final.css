@@ -99,18 +99,14 @@ li {
 }
 
 .btn-download {
-  background: none;
-  color: #868e96;
-  font-size: 14px;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
+  padding: 0 190px;
+  border: 2px solid #fd7e14;
+  color: #fd7e14;
 }
 
 .btn-download:hover {
-  color: #fd7e14;
+  background-color: #fd7e14;
+  color: #fff;
 }
 
 .download-icon {
@@ -172,7 +168,7 @@ footer {
   height: 25px;
   stroke: #fff;
 }
-@media only screen and (orientation: portrait)  {
+@media only screen and (orientation: portrait) {
   .resume {
     width: 90%;
     margin-left: auto;
@@ -183,7 +179,6 @@ footer {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
-
   }
   .color {
     flex-basis: 26%;
