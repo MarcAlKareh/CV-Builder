@@ -7,7 +7,7 @@ const dotenv = require('dotenv');
 
 dotenv.config();
 
-const { Configuration, OpenAIApi } = require("openai");
+const { Configuration, OpenAIApi } = require('openai');
 
 const openAIConfig = new Configuration({
   apiKey: process.env.API_KEY,
@@ -101,8 +101,8 @@ app.get('/summary-ai', async (req, res, next) => {
   const { input } = req.query;
 
   const resAi = await openai.createChatCompletion({
-    model: "gpt-3.5-turbo",
-    messages: [{ role: "user", content: input }],
+    model: 'gpt-3.5-turbo',
+    messages: [{ role: 'user', content: input }],
   });
 
   // console.log(resAi.data.choices[0].message.content);
