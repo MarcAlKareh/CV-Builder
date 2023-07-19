@@ -8,6 +8,7 @@ main {
   resize: none;
   outline: none;
   margin-bottom: 30px;
+  padding: 8px 8px;
 }
 
 .summary-form textarea {
@@ -17,6 +18,7 @@ main {
   height: 400px;
   font-size: 16px;
   font-family: sans-serif;
+  padding: 8px 8px;
   resize: none;
   margin-bottom: 20px;
 }
