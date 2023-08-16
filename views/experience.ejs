@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/css/experience.css" />
   </head>
   <body>
-    <%- include('logo.ejs') %>
+    <%- include('includes/logo.ejs') %>
     <main>
       <h2><%= mainHeader %></h2>
       <form class="experience-form" action="/experience" method="post">
@@ -41,12 +41,12 @@
 
           <div>
             <label for="sdate">Start Date</label>
-            <input type="date" name="sdate" id="sdate" />
+            <input type="date" name="sdate" id="sdate" required="required" />
           </div>
 
           <div>
             <label for="edate">End Date</label>
-            <input type="date" name="edate" id="edate" />
+            <input type="date" name="edate" id="edate" required="required" />
           </div>
         </div>
 

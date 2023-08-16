@@ -55,6 +55,7 @@ main {
   gap: 10px;
   cursor: pointer;
   margin-bottom: 40px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
 }
 
 .btn-add:hover {
@@ -70,6 +71,7 @@ main {
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
   cursor: pointer;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
 .btn-back {
