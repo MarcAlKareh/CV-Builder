@@ -7,18 +7,12 @@
     <title><%= pageTitle %></title>
     <link rel="stylesheet" href="/css/main.css" />
     <link rel="stylesheet" href="/css/summary-page.css" />
-    <script type="module" defer src="/js/summary-page.js"></script>
+    <script type="module" defer src="/js/ai.js"></script>
   </head>
   <body>
     <%- include('includes/logo.ejs') %>
     <main>
       <h2>Professional Summary</h2>
-
-      <textarea
-        type="text"
-        placeholder="Get your summary paragraph checked by an AI here"
-        class="summary-check"
-      ></textarea>
 
       <form class="summary-form" action="/summary" method="post">
         <textarea
@@ -40,6 +34,14 @@
           <button class="btn-submit" type="submit">NEXT</button>
         </div>
       </form>
+
+      <textarea
+        type="text"
+        placeholder="<%= placeholderAI %>"
+        class="summary-check hidden"
+      ></textarea>
+
+      <%- include('includes/btnAI.ejs') %>
     </main>
   </body>
 </html>

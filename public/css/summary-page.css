@@ -2,15 +2,6 @@ main {
   margin-top: -25px;
 }
 
-.summary-check {
-  height: 300px;
-  border: 2px solid #adb5bd;
-  resize: none;
-  outline: none;
-  margin-bottom: 30px;
-  padding: 8px 8px;
-}
-
 .summary-form textarea {
   outline: none;
   border: 2px solid #adb5bd;
@@ -29,5 +20,6 @@ main {
   font-family: sans-serif;
   font-size: 16px;
 }
+
 @media only screen and (orientation: portrait) {
 }

@@ -7,6 +7,7 @@
     <title><%= pageTitle %></title>
     <link rel="stylesheet" href="/css/main.css" />
     <link rel="stylesheet" href="/css/experience.css" />
+    <script type="module" defer src="/js/ai.js"></script>
   </head>
   <body>
     <%- include('includes/logo.ejs') %>
@@ -73,6 +74,14 @@
           <button class="btn-submit" type="submit">NEXT</button>
         </div>
       </form>
+
+      <textarea
+        type="text"
+        placeholder="<%= placeholderAI %>"
+        class="summary-check hidden"
+      ></textarea>
+
+      <%- include('includes/btnAI.ejs') %>
     </main>
   </body>
 </html>

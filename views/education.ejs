@@ -4,9 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= pageTitle %></title>
     <link rel="stylesheet" href="/css/main.css" />
     <link rel="stylesheet" href="/css/education.css" />
-    <title><%= pageTitle %></title>
+    <script type="module" defer src="/js/ai.js"></script>
   </head>
 
   <body>
@@ -33,6 +34,14 @@
           </div>
         </form>
       </div>
+
+      <textarea
+        type="text"
+        placeholder="<%= placeholderAI %>"
+        class="summary-check hidden"
+      ></textarea>
+
+      <%- include('includes/btnAI.ejs') %>
     </main>
   </body>
 </html>

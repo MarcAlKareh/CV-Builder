@@ -85,6 +85,7 @@ app.post('/contact-details', (req, res, next) => {
 app.get('/summary', (req, res, next) => {
   res.render('summary-page', {
     pageTitle: 'Professional Summary',
+    placeholderAI: 'Get your professional summary checked by AI here',
     data: req.session.data,
   });
 });
@@ -118,6 +119,7 @@ app.get('/experience', (req, res, next) => {
   res.render('experience', {
     pageTitle: 'Work History',
     mainHeader: 'Tell us a little bit about your most recent job',
+    placeholderAI: 'Get your job description checked by AI here',
     data: req.session.data,
     index: mostRecentIndex,
   });
@@ -192,6 +194,7 @@ app.get('/delete', (req, res, next) => {
 app.get('/education', (req, res, next) => {
   res.render('education', {
     pageTitle: 'Education',
+    placeholderAI: 'Get your education description checked by AI here',
     data: req.session.data,
   });
 });

@@ -96,3 +96,37 @@ main {
   background-color: #fab005;
   transform: translateY(-2px);
 }
+
+.summary-check {
+  position: fixed;
+  width: 300px;
+  height: 200px;
+  bottom: 80px;
+  right: 60px;
+  border: 2px solid #adb5bd;
+  resize: none;
+  outline: none;
+  padding: 8px 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.btn-ai {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  bottom: 10px;
+  right: 10px;
+  border: 2px solid #000;
+  outline: none;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: #fff;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.hidden {
+  display: none;
+}
