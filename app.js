@@ -95,7 +95,9 @@ app.post('/summary', (req, res, next) => {
 
   req.session.data.professionalSummary = body.summary;
 
-  res.redirect('/experience');
+  if (req.session.data.experience) {
+    res.redirect('/work-history');
+  } else res.redirect('/experience');
 });
 
 app.get('/summary-ai', async (req, res, next) => {
