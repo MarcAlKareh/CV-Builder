@@ -95,7 +95,9 @@ app.post('/summary', (req, res, next) => {
 
   req.session.data.professionalSummary = body.summary;
 
-  res.redirect('/experience');
+  if (req.session.data.experience) {
+    res.redirect('/work-history');
+  } else res.redirect('/experience');
 });
 
 app.get('/summary-ai', async (req, res, next) => {
@@ -173,6 +175,7 @@ app.get('/another-position', (req, res, next) => {
   res.render('experience', {
     pageTitle: 'Work History',
     mainHeader: 'Tell us about another job',
+    placeholderAI: 'Get your job description checked by AI here',
     data: req.session.data,
   });
 });
