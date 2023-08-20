@@ -175,6 +175,7 @@ app.get('/another-position', (req, res, next) => {
   res.render('experience', {
     pageTitle: 'Work History',
     mainHeader: 'Tell us about another job',
+    placeholderAI: 'Get your job description checked by AI here',
     data: req.session.data,
   });
 });
