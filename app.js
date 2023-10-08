@@ -104,7 +104,12 @@ app.get('/summary-ai', async (req, res, next) => {
 
   const resAi = await openai.createChatCompletion({
     model: 'gpt-3.5-turbo',
-    messages: [{ role: 'user', content: input }],
+    messages: [
+      {
+        role: 'user',
+        content: `I am writing a professional summary for my CV. Here are some of the details you need to write me a professional summary and please make it 4 lines long: ${input}`,
+      },
+    ],
   });
 
   // console.log(resAi.data.choices[0].message.content);
