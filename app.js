@@ -100,18 +100,29 @@ app.post('/summary', (req, res, next) => {
 });
 
 app.get('/summary-ai', async (req, res, next) => {
-  const { input } = req.query;
+  try {
+    const { input } = req.query;
+    const { q } = req.query;
+    // console.log(q);
 
-  const resAi = await openai.createChatCompletion({
-    model: 'gpt-3.5-turbo',
-    messages: [{ role: 'user', content: input }],
-  });
+    const resAi = await openai.createChatCompletion({
+      model: 'gpt-3.5-turbo',
+      messages: [
+        {
+          role: 'user',
+          content: `${q}: ${input}`,
+        },
+      ],
+    });
 
-  // console.log(resAi.data.choices[0].message.content);
+    // console.log(resAi.data.choices[0].message.content);
 
-  res.send({
-    reply: resAi.data.choices[0].message.content,
-  });
+    res.send({
+      reply: resAi.data.choices[0].message.content,
+    });
+  } catch (err) {
+    console.log(err);
+  }
 });
 
 app.get('/experience', (req, res, next) => {
@@ -120,7 +131,6 @@ app.get('/experience', (req, res, next) => {
   res.render('experience', {
     pageTitle: 'Work History',
     mainHeader: 'Tell us a little bit about your most recent job',
-    placeholderAI: 'Get your job description checked by AI here',
     data: req.session.data,
     index: mostRecentIndex,
   });
